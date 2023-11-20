@@ -31,5 +31,4 @@ jobs:
 
       - name: Run Python tests
         run: |
-          poetry install --all-extras
           poetry run pytest python
