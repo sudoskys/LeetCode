@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     cwd = pathlib.Path(__file__).parent.absolute().__str__()
     pathlib.Path(cwd + "/" + "python" + "/" + project_name).mkdir(parents=True, exist_ok=True)
-    pathlib.Path(cwd + "/" + "python" + "/" + project_name + "/" + "test_solution.py").touch()
+    pathlib.Path(cwd + "/" + "python" + "/" + project_name + "/" + f"test{project_name}.py").touch()
     pathlib.Path(cwd + "/" + "python" + "/" + project_name + "/" + "README.md").touch()
     pprint.pprint(f"Project {project_name} Created")
     pprint.pprint(f"Files: ")
