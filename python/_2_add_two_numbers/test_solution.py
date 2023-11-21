@@ -21,9 +21,10 @@ class Solution:
 
         l1.val += l2.val  # 将两数相加，赋值给 l1 节点
         if l1.val >= 10:
+            # 如果 l1.val >= 10，说明需要进位，将进位的值赋值给 l1.next
             l1.next = self.addTwoNumbers(ListNode(l1.val // 10), l1.next)
-            l1.val %= 10
-
+            l1.val %= 10  # l1.val 取余 10，保证 l1.val < 10，保证递归的正确性
+            # 这里的 l1.next 传入的是一个新的节点，值为 l1.val // 10，这样就可以保证 l1.next.val < 10
         l1.next = self.addTwoNumbers(l1.next, l2.next)
         return l1
 
